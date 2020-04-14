@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,WAAW,CAAC;EACV,MAAM,EAAE,IAAI;CACb;;AAED,AAAA,aAAa,CAAC;EACZ,YAAY,EAAE,IAAI;CACnB",
+    "sources": [
+        "shell.component.scss"
+    ],
+    "names": [],
+    "file": "shell.component.css"
+}

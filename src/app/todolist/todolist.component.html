@@ -1,0 +1,32 @@
+<ul>
+  <li *ngFor="let list of todolist$ | async">
+    <h2>{{ list.title }}</h2>
+    <ul *ngFor="let item of items$ | async">
+      <li *ngIf="item.todolist == list.id">
+        <form [formGroup]="item_form" (ngSubmit)="itemUpdate(item)">
+          {{ item.item }}
+          <button type="button" (click)="itemDelete(item.id)">x</button>
+          <p *ngIf="item.notes">{{ item.notes }}</p>
+        </form>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<form [formGroup]="item_form" (ngSubmit)="onSubmit()">
+  <label for="todolist">
+    todolist
+  </label>
+  <select formControlName="todolist" id="">
+    <option *ngFor="let list of todolist$ | async" [value]="list.id">{{
+      list.title
+    }}</option>
+  </select>
+  <label for="item">Add todolist - item</label>
+  <input type="text" formControlName="item" required />
+  <br />
+  <label for="notes">Add notes</label>
+  <input type="text" formControlName="notes" required />
+  <br />
+  <button type="submit">Add Task</button>
+</form>

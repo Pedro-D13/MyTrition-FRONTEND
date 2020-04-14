@@ -1,0 +1,21 @@
+@import "src/styles";
+
+.button-list {
+  display: flex;
+  margin: auto;
+  justify-content: center;
+  a {
+    margin: 1em;
+  }
+}
+
+.ion-card {
+  text-align: center;
+  * {
+    text-align: center;
+  }
+}
+
+.ion-list {
+  text-align: center;
+}

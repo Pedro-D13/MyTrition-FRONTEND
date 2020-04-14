@@ -1,0 +1,15 @@
+<ion-card>
+  <ion-card-header>
+    <ion-card-title>
+      Habits List
+    </ion-card-title>
+  </ion-card-header>
+  <ion-item-divider></ion-item-divider>
+  <ion-card-content>
+    <ion-list>
+      <ion-item *ngFor="let habit of habit$ | async">
+        {{ habit.title }}
+      </ion-item>
+    </ion-list>
+  </ion-card-content>
+</ion-card>

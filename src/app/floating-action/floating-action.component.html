@@ -1,0 +1,24 @@
+<ion-fab *ngIf="handset$" vertical="center" horizontal="end" slot="fixed">
+  <ion-fab-button color="success">
+    <ion-icon name="arrow-up-circle"></ion-icon>
+  </ion-fab-button>
+  <ion-fab-list side="top">
+    <ion-fab-button
+      routerLink="/todolist"
+      alt="tasks"
+      aria-label="tasks"
+      color="medium"
+      >📝</ion-fab-button
+    >
+    <ion-fab-button alt="timer" aria-label="pomodoro" color="medium"
+      >⏲️</ion-fab-button
+    >
+    <ion-fab-button
+      routerLink="/habits"
+      alt="habits"
+      aria-label="habits"
+      color="medium"
+      >🧘‍♀️</ion-fab-button
+    >
+  </ion-fab-list>
+</ion-fab>

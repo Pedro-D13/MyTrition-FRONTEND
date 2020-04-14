@@ -1,0 +1,86 @@
+<mat-sidenav-container class="sidenav-container">
+  <!-- SIDENAV -->
+  <mat-sidenav
+    #drawer
+    class="sidenav"
+    fixedInViewport
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [opened]="false"
+  >
+    <mat-toolbar color="accent">Menu</mat-toolbar>
+    <mat-nav-list style="padding-top: 2rem;">
+      <a
+        mat-list-item
+        routerLinkActive="active"
+        routerLink="/"
+        (click)="drawer.close()"
+        >Home</a
+      >
+      <a
+        mat-list-item
+        routerLinkActive="active"
+        routerLink="/login"
+        (click)="drawer.close()"
+        >Login</a
+      >
+      <a
+        mat-list-item
+        routerLinkActive="active"
+        routerLink="/habit"
+        (click)="drawer.close()"
+        >Habit</a
+      >
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <!-- TOP TOOLBAR-->
+
+    <mat-toolbar color="accent">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async"
+      >
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <button mat-flat-button color="accent" class="logo" routerLink="/">
+        📝 Habby ⏳
+      </button>
+
+      <span class="fill-space"></span>
+      <div *ngIf="!(isHandset$ | async)">
+        <a mat-button routerLinkActive="active" routerLink="/habit">
+          🧘‍♂️ Habit Tracker</a
+        >
+        <a mat-button routerLinkActive="active" routerLink="/todolist">
+          🗒️TodoList</a
+        >
+
+        <a mat-button routerLinkActive="active" routerLink="/login">🔑 Login</a>
+      </div>
+
+      <!-- DROPDOWN MENU -->
+
+      <button
+        mat-icon-button
+        [matMenuTriggerFor]="menu"
+        aria-label="Example icon-button with a menu"
+      >
+        <mat-icon>more_vert</mat-icon>
+      </button>
+
+      <mat-menu #menu="matMenu">
+        <a mat-menu-item href="https://github.com/Pedro-D13">
+          <i>👨🏿‍💻</i>
+          <span>Check out my git </span>
+        </a>
+      </mat-menu>
+    </mat-toolbar>
+
+    <!-- TRANSCLUSION -->
+    <ng-content></ng-content>
+  </mat-sidenav-content>
+</mat-sidenav-container>
