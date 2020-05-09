@@ -1,6 +1,6 @@
-## Habby 
+## MyTrition FrontEnd 
 
-Habbit tracker, Todo List and Pomodoro Timer. 
+Allows site users to search and get food item search results
 
 ## Development server
 
